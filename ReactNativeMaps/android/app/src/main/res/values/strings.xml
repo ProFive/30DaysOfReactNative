@@ -1,0 +1,14 @@
+<!--
+@Author: Nani
+@Date:   14-Mar-2017
+@Email:  ngvannam5@gmail.com
+@Project: ReactNativeMaps
+@Last modified by:   Nani
+@Last modified time: 14-Mar-2017
+-->
+
+
+<resources>
+    <string name="google_maps_key">AIzaSyBr3tg75Bzo6TwvAxkcB8kQh54E14-Jus0</string>
+    <string name="app_name">ReactNativeMaps</string>
+</resources>
