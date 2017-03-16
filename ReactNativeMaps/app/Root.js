@@ -8,14 +8,19 @@
 */
 
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Dimensions, Image} from 'react-native';
+import {Text, View, StyleSheet, Dimensions, Image, TouchableOpacity} from 'react-native';
 var {height, width} = Dimensions.get('window');
 import MapView from 'react-native-maps';
+import RNGooglePlaces from 'react-native-google-places';
 
 class Root extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            latlng:{
+              latitude: 21.0277644,
+              longitude: 105.8341598
+            },
             region: {
                 latitude: 10.870938,
                 longitude: 106.7588,
@@ -54,15 +59,33 @@ class Root extends Component {
             ]
         };
         this.onRegionChange = this.onRegionChange.bind(this);
-    }
+    };
 
     onRegionChange(region) {
         this.setState({region});
     };
-
+    onMoveMapToLocation(latlng){
+        this.state({
+          region:{
+            latitudeDelta:0.02,
+            longitudeDelta:0.02,
+            ...latlng
+          }
+        });
+    };
+    openSearchModal() {
+       RNGooglePlaces.openAutocompleteModal()
+       .then((place) => {
+           console.log(place);
+           // place represents user's selection from the
+           // suggestions and it is a simplified Google Place object.
+          this.setState({latlng: {latitude: place.latitude, longitude:place.longitude}});
+       }).catch(error => console.log(error.message));  // error is a Javascript Error object
+    };
     render() {
         return (
             <View style={styles.container}>
+
                 <MapView
                   showsMyLocationButton={true}
                   showsUserLocation={true}
@@ -96,13 +119,19 @@ class Root extends Component {
                     ))}
                 </MapView>
                 <View style={styles.regionInformation}>
-                    <Text>
-                        Lat: {this.state.region.latitude}
-                        Log: {this.state.region.longitude}{'\n'}
-                        LatDelta: {this.state.region.latitudeDelta}
-                        LogDelta: {this.state.region.longitudeDelta}
-                    </Text>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => this.openSearchModal()}>
+                    <Text>Pick a Place</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => this.onMoveMapToLocation(this.state.latlng)}>
+                    <Text>{this.state.latlng.latitude} - {this.state.latlng.longitude}</Text>
+                  </TouchableOpacity>
                 </View>
+
             </View>
         );
     }
@@ -162,7 +191,7 @@ const styles = StyleSheet.create({
     },
     regionInformation: {
         width: width,
-        height: 100,
+        height: 150,
         alignItems: 'center',
         backgroundColor: '#F5FCFF'
     }
