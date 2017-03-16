@@ -4,11 +4,11 @@
 * @Email:  ngvannam5@gmail.com
 * @Project: ReactNativeMaps
 * @Last modified by:   Nani
-* @Last modified time: 14-Mar-2017
+* @Last modified time: 16-Mar-2017
 */
 
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Dimensions} from 'react-native';
+import {Text, View, StyleSheet, Dimensions, Image} from 'react-native';
 var {height, width} = Dimensions.get('window');
 import MapView from 'react-native-maps';
 
@@ -28,6 +28,7 @@ class Root extends Component {
                         latitude: 10.8494509,
                         longitude: 106.7563363
                     },
+                    image: require('./images/home.png'),
                     title: "My location!",
                     description: "45/2/2 Ho Van Tu"
                 }, {
@@ -35,6 +36,7 @@ class Root extends Component {
                         latitude: 10.849957,
                         longitude: 106.7544703
                     },
+                    image: require('./images/cassette.png'),
                     title: "Nhà Thờ Thủ Đức",
                     description: "41, Đường Võ Văn Ngân, Phường Linh Chiểu, Quận Thủ Đức, Linh Tây, Thủ Đức, Hồ Chí Minh, Việt Nam"
                 }, {
@@ -42,6 +44,7 @@ class Root extends Component {
                         latitude: 10.849957,
                         longitude: 106.7564731
                     },
+                    image: require('./images/report.png'),
                     title: "Trường CĐ Xây dựng số 2",
                     description: "190 Thu Duc District, Võ Văn Ngân, Bình Thọ, Thủ Đức, Hồ Chí Minh, Việt Nam"
                 }
@@ -57,15 +60,33 @@ class Root extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <MapView style={styles.map} region={this.state.region} onRegionChange={this.onRegionChange}>
-                    {this.state.markers.map((marker, i) => (<MapView.Marker key={i} coordinate={marker.latlng} title={marker.title} description={marker.description}/>))}
+                <MapView
+                  showsMyLocationButton={true}
+                  showsUserLocation={true}
+                  style={styles.map}
+                  region={this.state.region}
+                  onRegionChange={this.onRegionChange}>
+                    {this.state.markers.map((marker, i) => (
+                      <MapView.Marker
+                        key={i}
+                        coordinate={marker.latlng}
+                        title={marker.title}
+                        description={marker.description}>
+                        <View style={styles.pin}>
+                          <Image style={styles.pinImage} source={marker.image}/>
+                            <Text style={styles.pinText}>
+                              {marker.title}
+                            </Text>
+                        </View>
+                      </MapView.Marker>
+                    ))}
                 </MapView>
                 <View style={styles.regionInformation}>
                     <Text>
-                        Latitude: {this.state.region.latitude}{'\n'}
-                        Legalongitude: {this.state.region.longitude}{'\n'}
-                        LatitudeDelta: {this.state.region.latitudeDelta}{'\n'}
-                        LongitudeDelta: {this.state.region.longitudeDelta}
+                        Lat: {this.state.region.latitude}
+                        Log: {this.state.region.longitude}{'\n'}
+                        LatDelta: {this.state.region.latitudeDelta}
+                        LogDelta: {this.state.region.longitudeDelta}
                     </Text>
                 </View>
             </View>
@@ -94,9 +115,25 @@ const styles = StyleSheet.create({
         width: width,
         height: height
     },
+    pin:{
+      backgroundColor:'#ffa',
+      justifyContent:'center',
+      alignItems:'center',
+      borderColor:'black',
+      borderWidth:2,
+      padding:5,
+      borderRadius:10
+    },
+    pinImage:{
+      width:25,
+      height:25
+    },
+    pinText:{
+      color:'red'
+    },
     regionInformation: {
         width: width,
-        height: 200,
+        height: 100,
         alignItems: 'center',
         backgroundColor: '#F5FCFF'
     }
