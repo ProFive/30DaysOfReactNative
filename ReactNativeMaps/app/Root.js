@@ -29,6 +29,7 @@ class Root extends Component {
                         longitude: 106.7563363
                     },
                     image: require('./images/home.png'),
+                    photo: require('./images/home.png'),
                     title: "My location!",
                     description: "45/2/2 Ho Van Tu"
                 }, {
@@ -37,6 +38,7 @@ class Root extends Component {
                         longitude: 106.7544703
                     },
                     image: require('./images/cassette.png'),
+                    photo: require('./images/cassette.png'),
                     title: "Nhà Thờ Thủ Đức",
                     description: "41, Đường Võ Văn Ngân, Phường Linh Chiểu, Quận Thủ Đức, Linh Tây, Thủ Đức, Hồ Chí Minh, Việt Nam"
                 }, {
@@ -45,6 +47,7 @@ class Root extends Component {
                         longitude: 106.7564731
                     },
                     image: require('./images/report.png'),
+                    photo: require('./images/report.png'),
                     title: "Trường CĐ Xây dựng số 2",
                     description: "190 Thu Duc District, Võ Văn Ngân, Bình Thọ, Thủ Đức, Hồ Chí Minh, Việt Nam"
                 }
@@ -78,6 +81,17 @@ class Root extends Component {
                               {marker.title}
                             </Text>
                         </View>
+                        <MapView.Callout>
+                          <View style={styles.callout}>
+                            <Image style={styles.calloutPhoto} source={marker.photo}/>
+                              <Text style={styles.calloutTitle}>
+                                {marker.title}
+                              </Text>
+                              <Text>
+                                {marker.description}
+                              </Text>
+                          </View>
+                        </MapView.Callout>
                       </MapView.Marker>
                     ))}
                 </MapView>
@@ -130,6 +144,21 @@ const styles = StyleSheet.create({
     },
     pinText:{
       color:'red'
+    },
+    callout:{
+      flex:1,
+      paddingRight:10,
+      paddingBottom:10,
+      marginRight: 10,
+      marginBottom:10
+    },
+    calloutPhoto:{
+      flex:1,
+      width:166,
+      height: 83
+    },
+    calloutTitle:{
+      fontSize:16
     },
     regionInformation: {
         width: width,
