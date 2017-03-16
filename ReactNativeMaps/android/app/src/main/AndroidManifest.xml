@@ -4,7 +4,7 @@
 @Email:  ngvannam5@gmail.com
 @Project: ReactNativeMaps
 @Last modified by:   Nani
-@Last modified time: 14-Mar-2017
+@Last modified time: 16-Mar-2017
 -->
 
 
@@ -15,6 +15,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-sdk
         android:minSdkVersion="16"
