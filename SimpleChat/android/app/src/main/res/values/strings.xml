@@ -1,0 +1,14 @@
+<!--
+@Author: Nani
+@Date:   04-Apr-2017
+@Email:  ngvannam5@gmail.com
+@Project: 30DaysOfReactNative
+@Last modified by:   Nani
+@Last modified time: 04-Apr-2017
+-->
+
+
+<resources>
+    <string name="app_name">SimpleChat</string>
+    <string name="facebook_app_id">1820099178255129</string>
+</resources>
