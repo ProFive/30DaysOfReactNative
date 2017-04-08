@@ -6,8 +6,8 @@
  * @Last modified by:   Nani
  * @Last modified time: 08-Apr-2017
  */
-import {NavigationActions} from 'react-navigation';
-import {LOGIN, LOGOUT} from './types';
+import { NavigationActions } from 'react-navigation';
+import { LOGIN, LOGOUT } from './types';
 
 export const loginSuccess = (user) => {
     return (dispatch) => {

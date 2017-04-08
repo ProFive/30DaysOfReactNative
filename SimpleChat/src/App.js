@@ -7,7 +7,7 @@
  * @Last modified time: 08-Apr-2017
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     AppRegistry,
     StyleSheet,
@@ -17,7 +17,7 @@ import {
     TouchableOpacity,
     ActivityIndicator
 } from 'react-native';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import AppNavigator from './AppNavigator';
 import store from './store';
 
@@ -26,7 +26,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <AppNavigator/>
+                <AppNavigator />
             </Provider>
         );
     }
