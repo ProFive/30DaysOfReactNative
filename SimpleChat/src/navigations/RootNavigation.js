@@ -19,5 +19,7 @@ const RootNavigation = StackNavigator({
     Authorized: {
         screen: Chat
     }
+}, {
+    headerMode: 'screen'
 });
 export default RootNavigation;

@@ -15,11 +15,9 @@ const INIIAL = {
 export default(state = INIIAL, action) => {
     switch (action.type) {
         case LOGIN:
-            return {
-                ...state,
-                loggedIn: true,
-                user: action.payLoad
-            };
+            return {loggedIn: true, user: action.payLoad};
+        case LOGOUT:
+            return INIIAL;
         default:
             return state;
     }
