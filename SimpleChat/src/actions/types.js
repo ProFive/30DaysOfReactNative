@@ -7,10 +7,8 @@
  * @Last modified time: 08-Apr-2017
  */
 
- import React from 'react';
- import {
-   AppRegistry,
- } from 'react-native';
-
- import App from './src/App';
- AppRegistry.registerComponent('SimpleChat', () => App);
+/**
+  * AUTH
+  */
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
