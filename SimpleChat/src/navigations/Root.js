@@ -7,9 +7,9 @@
  * @Last modified time: 08-Apr-2017
  */
 
-import {StackNavigator} from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
-import Authorized from  './Authorized';
+import Authorized from './Authorized';
 import Login from '../screens/Login';
 
 const Root = StackNavigator({
@@ -20,11 +20,11 @@ const Root = StackNavigator({
         screen: Authorized
     }
 }, {
-    headerMode: 'screen',
-    navigationOptions:{
-        header:{
-            visible: false
+        headerMode: 'screen',
+        navigationOptions: {
+            header: {
+                visible: false
+            }
         }
-    }
-});
+    });
 export default Root;

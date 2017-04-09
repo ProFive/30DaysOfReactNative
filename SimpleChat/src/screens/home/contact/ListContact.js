@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import { DrawerButton } from '../../../components';
 
 class ListContact extends Component {
     static navigationOptions = {
-        title: 'List Contact'
+        title: 'List Contact',
+        header:{
+            left: <DrawerButton />
+        },
     }
     render() {
         return (
