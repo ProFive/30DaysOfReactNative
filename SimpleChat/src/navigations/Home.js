@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator,TabView } from 'react-navigation';
 import TabContact from './TabContact';
 import TabChat from './TabChat';
 import TabGroup from './TabGroup';
@@ -53,16 +53,28 @@ const Home = TabNavigator({
         tabBarOptions: {
             activeTintColor: 'blue',
             inactiveTintColor: 'grey',
-            activeBackgroundColor: 'yellow'
+            // activeBackgroundColor: 'yellow'
         },
+        tabBarComponent: TabView.TabBarBottom,
         tabBarPosition: 'bottom',
+        navigationOptions: {
+            drawer: {
+                label: 'Home',
+                icon: ({ tintColor }) => (
+                    <Image
+                        source={require('../images/icons/home.png')}
+                        style={[styles.icon, { tintColor: tintColor }]}
+                    />
+                ),
+            }
+        }
 
     });
 
 const styles = {
     icon: {
-        width: 64,
-        height: 64
+        width: 32,
+        height: 32
     }
 };
 export default Home;

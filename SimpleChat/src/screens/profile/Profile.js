@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 class Profile extends Component {
+    static navigationOptions = {
+        title: 'Profile',
+        header: {
+            visible: true
+        }
+    }
     render() {
         return (
             <View style={styles.container}>
