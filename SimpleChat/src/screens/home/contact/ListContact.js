@@ -5,9 +5,9 @@ import { DrawerButton } from '../../../components';
 class ListContact extends Component {
     static navigationOptions = {
         title: 'List Contact',
-        header:{
-            left: <DrawerButton />
-        },
+        header: (navigation) =>({
+            left: <DrawerButton navigation={navigation} />
+        }),
     }
     render() {
         return (
