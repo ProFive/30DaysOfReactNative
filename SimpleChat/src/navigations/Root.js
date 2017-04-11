@@ -13,12 +13,8 @@ import Authorized from './Authorized';
 import Login from '../screens/Login';
 
 const Root = StackNavigator({
-    // Unauthorized: {
-    //     screen: Login
-    // },
-    Authorized: {
-        screen: Authorized
-    }
+    Unauthorized: { screen: Login },
+    Authorized: { screen: Authorized }
 }, {
         headerMode: 'screen',
         navigationOptions: {

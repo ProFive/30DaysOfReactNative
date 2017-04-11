@@ -10,6 +10,7 @@ import { NavigationActions } from 'react-navigation';
 import { LOGIN, LOGOUT } from './types';
 
 export const loginSuccess = (user) => {
+    console.log("loginSuccess:", user);
     return (dispatch) => {
         dispatch({
             type: LOGIN,
@@ -19,7 +20,7 @@ export const loginSuccess = (user) => {
             index: 0,
             actions: [
                 NavigationActions.navigate({
-                    routeName: 'Authorized'
+                    routeName: 'Authorized',
                 })
             ],
         });

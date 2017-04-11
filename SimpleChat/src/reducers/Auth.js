@@ -7,17 +7,17 @@
  * @Last modified time: 08-Apr-2017
  */
 import {LOGIN, LOGOUT} from "../actions/types"
-const INIIAL = {
+const INITIAL = {
     loggedIn: false,
     user: null
 };
 
-export default(state = INIIAL, action) => {
+export default (state = INITIAL, action) => {
     switch (action.type) {
         case LOGIN:
-            return {loggedIn: true, user: action.payLoad};
+            return { loggedIn: true, user: action.payload };
         case LOGOUT:
-            return INIIAL;
+            return INITIAL;
         default:
             return state;
     }

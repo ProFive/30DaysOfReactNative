@@ -41,7 +41,8 @@ const styles = {
         color: '#fff'
     }
 };
-
-export default connect(state => ({
-    user: state.authentication.user
-}))(DrawerContent);
+const mapStateToProps = (state) => {
+    console.log('DrawerContent mapStateToProps:', state);
+    return { logged: state.authentication.loggedIn, user: state.authentication.user };
+};
+export default connect(mapStateToProps)(DrawerContent);
