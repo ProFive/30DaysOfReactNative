@@ -1,3 +1,5 @@
+import React from 'react';
+import { Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import ListGroup from '../screens/home/group/ListGroup';
@@ -6,11 +8,26 @@ import EditGroup from '../screens/home/group/EditGroup';
 import ViewGroup from '../screens/home/group/ViewGroup';
 
 const TabGroup = StackNavigator({
-    List: { screen: ListGroup },
+    List: {
+        screen: ListGroup,
+        navigationOptions: {
+            tabBar: {
+                label: 'Group',
+                icon: ({ tintColor }) => <Image source={require('../images/icons/group.png')} style={[styles.icon, { tintColor }]} />,
+            }
+        }
+    },
     Add: { screen: AddGroup },
     Edit: { screen: EditGroup },
     View: { screen: ViewGroup },
 
 });
+
+const styles = {
+    icon: {
+        width: 32,
+        height: 32
+    }
+};
 
 export default TabGroup;

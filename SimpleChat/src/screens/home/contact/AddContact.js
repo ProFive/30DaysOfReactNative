@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 class AddContact extends Component {
+    static navigationOptions = {
+        tabBar: {
+            visible: false
+        }
+    }
+    
     render() {
         return (
             <View style={styles.container}>

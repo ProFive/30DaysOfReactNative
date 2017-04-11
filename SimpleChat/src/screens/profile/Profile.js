@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import { DrawerButton } from '../../components';
 
 class Profile extends Component {
     static navigationOptions = {
         title: 'Profile',
-        header: {
-            visible: true
-        }
+        header: (navigation) => ({
+            visible: true,
+            left: <DrawerButton navigation={navigation} />
+        }),
     }
     render() {
         return (
