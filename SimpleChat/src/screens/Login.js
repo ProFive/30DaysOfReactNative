@@ -50,6 +50,11 @@ class Login extends Component {
             const credential = firebase.auth.FacebookAuthProvider.credential(token);
             const user = await firebase.auth().signInWithCredential(credential);
             console.log('user:', user);
+            firebase.database().ref(`/users/${user.uid}`).set({
+                displayName: user.displayName,
+                email: user.email,
+                photoURL: user.photoURL
+            });
             this.setState({
                 animating: false,
                 error: null

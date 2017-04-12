@@ -13,6 +13,10 @@
  import logger from 'redux-logger';
  import reducers from './reducers';
 
+const middlewares = [thunk];
+if (__DEV__) {
+    middlewares.push(logger);
+}
  const store = createStore(reducers, applyMiddleware(thunk));
 
  export default store;

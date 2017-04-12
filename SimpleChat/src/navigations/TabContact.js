@@ -3,9 +3,7 @@ import { Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import ListContact from '../screens/home/contact/ListContact';
-import AddContact from '../screens/home/contact/AddContact';
-import EditContact from '../screens/home/contact/EditContact';
-import ViewContact from '../screens/home/contact/ViewContact';
+import Conversation from '../screens/home/contact/Conversation';
 
 const TabContact = StackNavigator({
     List: {
@@ -17,9 +15,7 @@ const TabContact = StackNavigator({
             }
         }
     },
-    Add: { screen: AddContact },
-    Edit: { screen: EditContact },
-    View: { screen: ViewContact }
+    Conversation: { screen: Conversation },
 });
 
 const styles = {
