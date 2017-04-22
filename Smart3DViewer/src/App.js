@@ -55,7 +55,7 @@ class App extends Component {
 
   async _setupGoogleSignin() {
     try {
-      //await GoogleSignin.hasPlayServices({ autoResolve: true });
+      await GoogleSignin.hasPlayServices({ autoResolve: true });
       await GoogleSignin.configure({
         webClientId: "912632814531-j06u11s0i36etefmsb6bbvt9tuitrepg.apps.googleusercontent.com",
         offlineAccess: false
