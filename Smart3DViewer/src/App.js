@@ -2,6 +2,17 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 import { GoogleSignin, GoogleSigninButton } from "react-native-google-signin";
+import firebase from "firebase";
+
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyAjFMN_e_RcCPXfVuD6MTdQuBiqkHZUdiE",
+  authDomain: "smart3dviewer-33615.firebaseio.com",
+  databaseURL: "https://smart3dviewer-33615.firebaseio.com",
+  storageBucket: "smart3dviewer-33615.firebaseio.com/",
+  messagingSenderId: "912632814531"
+};
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 class App extends Component {
   constructor(props) {
@@ -64,6 +75,9 @@ class App extends Component {
       const user = await GoogleSignin.currentUserAsync();
       console.log(user);
       this.setState({ user });
+
+      //Call login firebase
+      this._loginFirebase();
     } catch (err) {
       console.log("Play services error", err.code, err.message);
     }
@@ -73,7 +87,10 @@ class App extends Component {
     GoogleSignin.signIn()
       .then(user => {
         console.log(user);
+
         this.setState({ user: user });
+        //Call login firebase
+        this._loginFirebase();
       })
       .catch(err => {
         console.log("WRONG SIGNIN", err);
@@ -89,6 +106,28 @@ class App extends Component {
       })
       .done();
   }
+  _loginFirebase = async () => {
+    try {
+      console.log("_loginFirebase:", this.state.user);
+      if (this.state.user) {
+        const token = this.state.user.accessToken.toString();
+        const idToken = this.state.user.idToken.toString();
+        const credential = firebase.auth.GoogleAuthProvider.credential(
+          idToken,
+          token
+        );
+        const user = await firebase.auth().signInWithCredential(credential);
+        console.log("user:", user);
+        firebase.database().ref(`/users/${user.uid}`).set({
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL
+        });
+      }
+    } catch (error) {
+      console.log("_loginFirebase error.message:", error.message);
+    }
+  };
 }
 export default App;
 
