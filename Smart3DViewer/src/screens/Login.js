@@ -15,21 +15,19 @@ import {
   TouchableOpacity
 } from "react-native";
 import { connect } from "react-redux";
-//import { AccessToken, LoginManager } from 'react-native-fbsdk';
 import { GoogleSignin, GoogleSigninButton } from "react-native-google-signin";
-
 import firebase from "firebase";
-
 import { loginSuccess } from "../actions/Authenticate";
 
-const config = {
-  apiKey: "AIzaSyDe98qXvA1giGE-TT65oslA-twAq_xcv_U",
-  authDomain: "smartfield-survey.firebaseio.com",
-  databaseURL: "https://smartfield-survey.firebaseio.com/",
-  storageBucket: "smartfield-survey.firebaseio.com",
-  messagingSenderId: "686477335673"
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyAjFMN_e_RcCPXfVuD6MTdQuBiqkHZUdiE",
+  authDomain: "smart3dviewer-33615.firebaseio.com",
+  databaseURL: "https://smart3dviewer-33615.firebaseio.com",
+  storageBucket: "smart3dviewer-33615.firebaseio.com/",
+  messagingSenderId: "912632814531"
 };
-firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 class Login extends Component {
   static navigationOptions = {
@@ -37,10 +35,13 @@ class Login extends Component {
       visible: false
     }
   };
-  state = {
-    animating: false,
-    error: null
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      animating: false,
+      error: null
+    };
+  }
 
   componentDidMount() {
     this.setupGoogleSignin();
@@ -49,61 +50,59 @@ class Login extends Component {
   async setupGoogleSignin() {
     try {
       await GoogleSignin.hasPlayServices({ autoResolve: true });
-      GoogleSignin.configure({
-        webClientId: "686477335673-shecut178qffaqkbas7ho8atbpi06912.apps.googleusercontent.com",
+      await GoogleSignin.configure({
+        webClientId: "912632814531-j06u11s0i36etefmsb6bbvt9tuitrepg.apps.googleusercontent.com",
         offlineAccess: false
       });
-      /*
+
       const user = await GoogleSignin.currentUserAsync();
       if (user) {
-        //this.setState({ user });
-        console.log("111 user:", user);
-        this.props.loginSuccess(user);
-      }*/
+        this.loginFirebase(user);
+      }
     } catch (err) {
       console.log("Play services error", err.code, err.message);
     }
   }
-  onLogin = async () => {
+  async loginFirebase(result) {
     try {
       this.setState({
         animating: true,
         error: null
       });
+      console.log("loginFirebase:", result);
+      const token = result.accessToken.toString();
+      const idToken = result.idToken.toString();
+      const credential = firebase.auth.GoogleAuthProvider.credential(
+        idToken,
+        token
+      );
+      const user = await firebase.auth().signInWithCredential(credential);
+      console.log("user:", user);
+      firebase.database().ref(`/users/${user.uid}`).set({
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL
+      });
 
+      this.props.loginSuccess(user);
+      
+    } catch (error) {
+      console.log("22 error.message:", error.message);
+      this.setState({
+        animating: false,
+        error: error.message
+      });
+    }
+  }
+  onLogin = async () => {
+    try {
       const result = await GoogleSignin.signIn();
       console.log("result:", result);
 
       if (result.isCancelled) {
         throw new Error("Please sign in before continue");
       }
-
-      console.log("111111111111111111111111111111111:");
-      console.log("idToken:", result.idToken);
-      console.log("accessToken:", result.accessToken);
-      const credential = firebase.auth.GoogleAuthProvider.credential(result.idToken, result.accessToken);
-      console.log("credential:", credential);
-      const user = await firebase.auth().signInWithCredential(credential);
-      if (user) {
-        console.log("user:", user);
-        firebase.database().ref(`/users/${user.uid}`).set({
-          displayName: user.displayName,
-          email: user.email,
-          photoURL: user.photoURL
-        });
-
-        this.setState({
-          animating: false,
-          error: null
-        });
-        this.props.loginSuccess(user);
-      } else {
-        console.log("11 error.message:", error.message);
-        this.setState({
-          animating: false,
-          error: error.message
-        });
-      }
+      this.loginFirebase(result);
     } catch (error) {
       console.log("22 error.message:", error.message);
       this.setState({

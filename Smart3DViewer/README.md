@@ -13,3 +13,5 @@ Google : intranote4
      npm install redux-thunk --save
 4. Navigation 
      npm install react-navigation --save
+5. Chat 
+    npm install react-native-gifted-chat --save
