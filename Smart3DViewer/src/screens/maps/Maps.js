@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { DrawerButton } from '../../components';
+import MapView from 'react-native-maps';
 
 class Maps extends Component {
     static navigationOptions = {
@@ -10,11 +11,26 @@ class Maps extends Component {
             left: <DrawerButton navigation={navigation} />
         }),
     }
+    constructor(props) {
+        super(props);
+        this.state = {
+            region: {
+                latitude: 37.78825,
+                longitude: -122.4324,
+                latitudeDelta: 0.015,
+                longitudeDelta: 0.0121,
+            }
+        };
+    }
+    onRegionChange(region) {
+        this.setState({ region });
+    }
     render() {
         return (
-            <View style={styles.container}>
-                <Text>Maps11111</Text>
-            </View>
+            <MapView
+                region={this.state.region}
+                onRegionChange={this.onRegionChange}
+            />
         );
     }
 }
