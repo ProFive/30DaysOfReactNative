@@ -13,7 +13,7 @@ class Maps extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Maps</Text>
+                <Text>Maps11111</Text>
             </View>
         );
     }
