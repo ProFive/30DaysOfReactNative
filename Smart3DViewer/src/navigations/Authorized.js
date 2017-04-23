@@ -10,9 +10,9 @@ import DrawerContent from "../components/DrawerContent";
 
 const Authorized = DrawerNavigator(
   {
+    Maps: { screen: Maps },
     Home: { screen: Home },
     Plans: { screen: Plans },
-    Maps: { screen: Maps },
     Profile: { screen: Profile },
     Setting: { screen: Setting }
     //    Logout: { screen: '' },
