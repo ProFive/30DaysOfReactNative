@@ -40,14 +40,11 @@ class Plans extends Component {
 
             if (response.didCancel) {
                 console.log('User cancelled photo picker');
-            }
-            else if (response.error) {
+            } else if (response.error) {
                 console.log('ImagePicker Error: ', response.error);
-            }
-            else if (response.customButton) {
+            } else if (response.customButton) {
                 console.log('User tapped custom button: ', response.customButton);
-            }
-            else {
+            } else {
                 let source = { uri: response.uri };
 
                 // You can also display the image using data:
@@ -73,14 +70,11 @@ class Plans extends Component {
 
             if (response.didCancel) {
                 console.log('User cancelled video picker');
-            }
-            else if (response.error) {
+            } else if (response.error) {
                 console.log('ImagePicker Error: ', response.error);
-            }
-            else if (response.customButton) {
+            } else if (response.customButton) {
                 console.log('User tapped custom button: ', response.customButton);
-            }
-            else {
+            } else {
                 this.setState({
                     videoSource: response.uri
                 });
