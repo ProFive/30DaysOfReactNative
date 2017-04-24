@@ -19,7 +19,14 @@ Google : intranote4
     npm install react-native-maps --save
     react-native link react-native-maps
 
-7. native UI to select media from the device library or directly from the camera
+7. Image picker from libary of take photo
     npm install react-native-image-picker@latest --save
     react-native link react-native-image-picker
+8. canvas drawing
+    npm install react-native-signature-capture --save
+    react-native link react-native-signature-capture
+9. Camera
+    npm install react-native-camera@https://github.com/lwansbrough/react-native-camera.git --save
+    react-native link react-native-camera
+
 

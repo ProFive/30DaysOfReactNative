@@ -3,6 +3,8 @@ package com.smart3dviewer;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.lwansbrough.RCTCamera.RCTCameraPackage;
+import com.rssignaturecapture.RSSignatureCapturePackage;
 import com.imagepicker.ImagePickerPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.arttitude360.reactnative.rngoogleplaces.RNGooglePlacesPackage;
@@ -29,6 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RCTCameraPackage(),
+            new RSSignatureCapturePackage(),
             new ImagePickerPackage(),
             new MapsPackage(),
             new RNGooglePlacesPackage(),
