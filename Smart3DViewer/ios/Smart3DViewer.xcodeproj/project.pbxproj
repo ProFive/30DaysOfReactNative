@@ -261,6 +261,16 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		788C06FAE3D04130AFD94EA6 /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; name = "RNGoogleSignin.xcodeproj"; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		166E939F50144DFF80A99A68 /* libRNGoogleSignin.a */ = {isa = PBXFileReference; name = "libRNGoogleSignin.a"; path = "libRNGoogleSignin.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		F5EABC5338FF4FAA8D2A2CAE /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		D023B5FBD67B47C89DD4C960 /* SafariServices.framework */ = {isa = PBXFileReference; name = "SafariServices.framework"; path = "System/Library/Frameworks/SafariServices.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		CDBEB09F3AC644489132A1FD /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		822E474664E24E42B11AB417 /* AddressBook.framework */ = {isa = PBXFileReference; name = "AddressBook.framework"; path = "System/Library/Frameworks/AddressBook.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		00824CE4264B49ECB8F9CC0E /* AirMaps.xcodeproj */ = {isa = PBXFileReference; name = "AirMaps.xcodeproj"; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		8047AC8819464EFFBAA1DFFD /* libAirMaps.a */ = {isa = PBXFileReference; name = "libAirMaps.a"; path = "libAirMaps.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+=======
 		7F6ED4C021B147C38479DAD5 /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; name = "RNGoogleSignin.xcodeproj"; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		AFB2EF65E45644ADAE16E491 /* libRNGoogleSignin.a */ = {isa = PBXFileReference; name = "libRNGoogleSignin.a"; path = "libRNGoogleSignin.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		3B0172D98D594CE8B40D9078 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
@@ -271,6 +281,7 @@
 		2799A206605B4C29BAF6DD1B /* libRNGooglePlaces.a */ = {isa = PBXFileReference; name = "libRNGooglePlaces.a"; path = "libRNGooglePlaces.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		A7C350D577C6468A98FB09FC /* AirMaps.xcodeproj */ = {isa = PBXFileReference; name = "AirMaps.xcodeproj"; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		83AE0D872A794B1F9116EBE9 /* libAirMaps.a */ = {isa = PBXFileReference; name = "libAirMaps.a"; path = "libAirMaps.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +308,14 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+<<<<<<< HEAD
+				1E017B466332453A82A064DB /* libRNGoogleSignin.a in Frameworks */,
+				231D17C4B3544BB4A91847AD /* libz.tbd in Frameworks */,
+				56DEC3D23DF64136B2208AD3 /* SafariServices.framework in Frameworks */,
+				433DB25048194CA58D227978 /* SystemConfiguration.framework in Frameworks */,
+				A2F80712F2E645CFA80F3CE9 /* AddressBook.framework in Frameworks */,
+				A5E978442275438EB1B915F6 /* libAirMaps.a in Frameworks */,
+=======
 				052B03303B3544628B039383 /* libRNGoogleSignin.a in Frameworks */,
 				BDF83AA269C24129BE9F6C2B /* libz.tbd in Frameworks */,
 				FDEFE2B16F70464D91F821B9 /* SafariServices.framework in Frameworks */,
@@ -304,6 +323,7 @@
 				FC9C2C3A17154A0E90D5A432 /* AddressBook.framework in Frameworks */,
 				1A31676D67E14F52A0F25E9C /* libRNGooglePlaces.a in Frameworks */,
 				05B6DB6C154C41E8BC8BD7A4 /* libAirMaps.a in Frameworks */,
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,9 +490,14 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+<<<<<<< HEAD
+				788C06FAE3D04130AFD94EA6 /* RNGoogleSignin.xcodeproj */,
+				00824CE4264B49ECB8F9CC0E /* AirMaps.xcodeproj */,
+=======
 				7F6ED4C021B147C38479DAD5 /* RNGoogleSignin.xcodeproj */,
 				66EE8C8BE7274A4AADE704B3 /* RNGooglePlaces.xcodeproj */,
 				A7C350D577C6468A98FB09FC /* AirMaps.xcodeproj */,
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1015,13 +1040,20 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
+=======
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
+<<<<<<< HEAD
+					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
+=======
 					"$(SRCROOT)\..\node_modules\react-native-google-places\ios",
 					"$(SRCROOT)\..\node_modules\react-native-maps\ios/**",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 			};
 			name = Debug;
@@ -1044,13 +1076,20 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
+=======
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
+<<<<<<< HEAD
+					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
+=======
 					"$(SRCROOT)\..\node_modules\react-native-google-places\ios",
 					"$(SRCROOT)\..\node_modules\react-native-maps\ios/**",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 			};
 			name = Release;
@@ -1073,8 +1112,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
+<<<<<<< HEAD
+					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
+=======
 					"$(SRCROOT)\..\node_modules\react-native-google-places\ios",
 					"$(SRCROOT)\..\node_modules\react-native-maps\ios/**",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 			};
 			name = Debug;
@@ -1096,8 +1139,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
+<<<<<<< HEAD
+					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
+=======
 					"$(SRCROOT)\..\node_modules\react-native-google-places\ios",
 					"$(SRCROOT)\..\node_modules\react-native-maps\ios/**",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 			};
 			name = Release;
@@ -1129,13 +1176,20 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
+=======
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
+<<<<<<< HEAD
+					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
+=======
 					"$(SRCROOT)\..\node_modules\react-native-google-places\ios",
 					"$(SRCROOT)\..\node_modules\react-native-maps\ios/**",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 			};
 			name = Debug;
@@ -1167,13 +1221,20 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
+=======
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin/**",
+<<<<<<< HEAD
+					"$(SRCROOT)\..\node_modules\react-native-maps\lib\ios/**",
+=======
 					"$(SRCROOT)\..\node_modules\react-native-google-places\ios",
 					"$(SRCROOT)\..\node_modules\react-native-maps\ios/**",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 			};
 			name = Release;
@@ -1200,7 +1261,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
+=======
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 			};
 			name = Debug;
@@ -1227,7 +1291,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
+=======
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+>>>>>>> db406528bdedf8ac46fe8887db5c4446252920a7
 				);
 			};
 			name = Release;
