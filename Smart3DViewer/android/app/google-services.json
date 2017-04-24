@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "912632814531-avti93k0a2b5ppbom8nfia6hobgk4cg7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smart3dviewer",
+            "certificate_hash": "015c53564d06166ee2d5039502dcc72439fbd67a"
+          }
+        },
+        {
           "client_id": "912632814531-abnoasnqjngkkm7jv0okvqb2ale943a8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

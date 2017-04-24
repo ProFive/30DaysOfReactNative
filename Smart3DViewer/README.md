@@ -15,6 +15,6 @@ Google : intranote4
      npm install react-navigation --save
 5. Chat 
     npm install react-native-gifted-chat --save
-6. Maps
+6. Google maps 
     npm install react-native-maps --save
     react-native link react-native-maps
