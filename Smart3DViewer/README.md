@@ -18,3 +18,8 @@ Google : intranote4
 6. Google maps 
     npm install react-native-maps --save
     react-native link react-native-maps
+
+7. native UI to select media from the device library or directly from the camera
+    npm install react-native-image-picker@latest --save
+    react-native link react-native-image-picker
+
