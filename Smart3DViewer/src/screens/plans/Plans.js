@@ -86,9 +86,9 @@ class Plans extends Component {
         const { back, front } = Camera.constants.Type;
 
         if (this.state.camera.type === back) {
-            icon = require('images/cameras/ic_camera_rear_white.png');
+            icon = require('../../images/cameras/ic_camera_rear_white.png');
         } else if (this.state.camera.type === front) {
-            icon = require('images/cameras/ic_camera_front_white.png');
+            icon = require('../../images/cameras/ic_camera_front_white.png');
         }
 
         return icon;
@@ -119,11 +119,11 @@ class Plans extends Component {
         const { auto, on, off } = Camera.constants.FlashMode;
 
         if (this.state.camera.flashMode === auto) {
-            icon = require('images/cameras/ic_flash_auto_white.png');
+            icon = require('../../images/cameras/ic_flash_auto_white.png');
         } else if (this.state.camera.flashMode === on) {
-            icon = require('images/cameras/ic_flash_on_white.png');
+            icon = require('../../images/cameras/ic_flash_on_white.png');
         } else if (this.state.camera.flashMode === off) {
-            icon = require('images/cameras/ic_flash_off_white.png');
+            icon = require('../../images/cameras/ic_flash_off_white.png');
         }
 
         return icon;
@@ -177,7 +177,7 @@ class Plans extends Component {
                             onPress={this.takePicture}
                         >
                             <Image
-                                source={require('../../../images/cameras/ic_photo_camera_36pt.png')}
+                                source={require('../../images/cameras/ic_photo_camera_36pt.png')}
                             />
                         </TouchableOpacity>
                         ||
@@ -192,7 +192,7 @@ class Plans extends Component {
                             onPress={this.startRecording}
                         >
                             <Image
-                                source={require('images/cameras/ic_videocam_36pt.png')}
+                                source={require('../../images/cameras/ic_videocam_36pt.png')}
                             />
                         </TouchableOpacity>
                         ||
@@ -201,7 +201,7 @@ class Plans extends Component {
                             onPress={this.stopRecording}
                         >
                             <Image
-                                source={require('images/cameras/ic_stop_36pt.png')}
+                                source={require('../../images/cameras/ic_stop_36pt.png')}
                             />
                         </TouchableOpacity>
                     }
