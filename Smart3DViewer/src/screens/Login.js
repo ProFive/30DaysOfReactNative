@@ -63,6 +63,11 @@ class Login extends Component {
       console.log("Play services error", err.code, err.message);
     }
   }
+  
+  /**
+   * call login firebase with google account
+   * @param {any} result 
+   */
   async loginFirebase(result) {
     try {
       this.setState({
@@ -78,14 +83,21 @@ class Login extends Component {
       );
       const user = await firebase.auth().signInWithCredential(credential);
       console.log("user:", user);
-      firebase.database().ref(`/users/${user.uid}`).set({
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL
-      });
+      //Check user exit firebase 
+      firebase.database().ref(`/users/${user.uid}`).on('value', snap => {
+        this.props.loginSuccess(snap.val);
+      }, error => {
+        console.log('check user exits firebase', error);
+        firebase.database().ref(`/users/${user.uid}`).set({
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          refreshToken: null,
+          uid: user.uid
+        });
+        this.props.loginSuccess(user);
 
-      this.props.loginSuccess(user);
-      
+      });
     } catch (error) {
       console.log("22 error.message:", error.message);
       this.setState({

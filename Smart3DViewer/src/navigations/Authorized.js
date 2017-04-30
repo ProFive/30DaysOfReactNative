@@ -1,20 +1,32 @@
 import React from "react";
 import { DrawerNavigator } from "react-navigation";
 
-import Home from "./Home";
+import Workspace from "./Workspace";
+import Dashboard from "./Dashboard";
+import Issues from "./Issues";
 import Plans from "./Plans";
 import Maps from "./Maps";
+import Viewer from "./Viewer";
+import Notificawtion from "./Notification";
+import About from "./About";
+import Home from "./Home";
 import Profile from "./Profile";
 import Setting from "./Setting";
 import DrawerContent from "../components/DrawerContent";
 
 const Authorized = DrawerNavigator(
   {
-    Maps: { screen: Maps },
-    Home: { screen: Home },
+    Workspace:{screen:Workspace},
+    Dashboard:{screen:Dashboard},
+    Issues:{screen:Issues},
     Plans: { screen: Plans },
+    Maps: { screen: Maps },
+    Viewer:{screen:Viewer},
+    Notificawtion:{screen:Notification},
+    About:{screen:About},
     Profile: { screen: Profile },
-    Setting: { screen: Setting }
+    Setting: { screen: Setting },
+    Home: { screen: Home },
     //    Logout: { screen: '' },
   },
   {
