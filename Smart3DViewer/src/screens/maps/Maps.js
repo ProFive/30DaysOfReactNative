@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Dimensions, Image, TouchableOpacity } from 'react-native';
 import { DrawerButton } from '../../components';
 var { height, width } = Dimensions.get('window');
-import MapView from 'react-native-maps';
+//import MapView from 'react-native-maps';
 import RNGooglePlaces from 'react-native-google-places';
 class Maps extends Component {
     static navigationOptions = {
@@ -12,7 +12,14 @@ class Maps extends Component {
             left: <DrawerButton navigation={navigation} />
         }),
     }
-    constructor(props) {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>Google Maps</Text>
+            </View>
+        );
+    }
+    /*constructor(props) {
         super(props);
         this.state = {
             latlng: {
@@ -132,7 +139,7 @@ class Maps extends Component {
 
             </View>
         );
-    }
+    }*/
 }
 
 export default Maps;

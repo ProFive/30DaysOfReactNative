@@ -6,10 +6,9 @@ import com.facebook.react.ReactApplication;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;
 import com.rssignaturecapture.RSSignatureCapturePackage;
 import com.imagepicker.ImagePickerPackage;
-import com.airbnb.android.react.maps.MapsPackage;
+//import com.airbnb.android.react.maps.MapsPackage;
 import com.arttitude360.reactnative.rngoogleplaces.RNGooglePlacesPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
-import com.airbnb.android.react.maps.MapsPackage;
 
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -34,7 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
             new RCTCameraPackage(),
             new RSSignatureCapturePackage(),
             new ImagePickerPackage(),
-            new MapsPackage(),
+            //new MapsPackage(),
             new RNGooglePlacesPackage(),
             new RNGoogleSigninPackage()
       );

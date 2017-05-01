@@ -1,5 +1,6 @@
 Google : intranote4
-
+mdkir temp
+robocopy /MIR D:\ReactNative\Workspaces\30DaysOfReactNative\Smart3DViewer\temp d:\ReactNative\Workspaces\30DaysOfReactNative\Smart3DViewer\node_modules
 1.Google sign-in
     npm install react-native-google-signin --save
     react-native link react-native-google-signin
@@ -29,4 +30,7 @@ Google : intranote4
     npm install react-native-camera@https://github.com/lwansbrough/react-native-camera.git --save
     react-native link react-native-camera
 
+10.
+    npm install --save react-native-sqlite-storage
+    react-native link react-native-sqlite-storage
 
