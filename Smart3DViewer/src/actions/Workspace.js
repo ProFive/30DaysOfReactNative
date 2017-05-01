@@ -10,20 +10,18 @@ import {
 * @param {any} { me } 
 * @returns list workspaceId of workspace
 */
-const workspaces = [];
-const workspacesKey = [];
 
 export const fetchListWorkspace = ({ me }) => {
     console.log('fetchListWorkspace :', me.workspaceIds.lenght);
     return (dispatch) => {
-        workspaces = [];
-        workspacesKey = [];
+        const workspaces = [];
+        const workspacesKey = [];
         for (var key in me.workspaceIds) {
             // skip loop if the property is from prototype
             if (!me.workspaceIds.hasOwnProperty(key)) continue;
             workspacesKey.push(key);
         };
-        getWorkspaces(function () {
+        getWorkspaces(workspaces, workspacesKey, function () {
             dispatch({
                 type: FETCH_WORKSPACE_SUCCESS,
                 workspaces
@@ -32,13 +30,13 @@ export const fetchListWorkspace = ({ me }) => {
 
     };
 };
-function getWorkspaces(callback) {
+function getWorkspaces(workspaces, workspacesKey, callback) {
     if (workspacesKey.length > 0) {
         const key = workspacesKey.pop();
         console.log('obj key:', key);
         getWorkspaceId(key, function (workspace) {
             workspaces.push(workspace);
-            getWorkspaces(callback);
+            getWorkspaces(workspaces, workspacesKey, callback);
         });
     } else {
         callback();
