@@ -11,12 +11,14 @@ import { combineReducers } from 'redux';
 
 import Auth from './Auth';
 import Navigation from './Navigation';
+import Workspace from './Workspace';
 import Contact from './Contact';
 import Chat from './Chat';
 
 export default combineReducers({
   authentication: Auth,
   nav: Navigation,
+  workspace: Workspace,
   contact: Contact,
   chat: Chat
 });

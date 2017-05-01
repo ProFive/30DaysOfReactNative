@@ -7,7 +7,7 @@ import Issues from "./Issues";
 import Plans from "./Plans";
 import Maps from "./Maps";
 import Viewer from "./Viewer";
-import Notificawtion from "./Notification";
+import Notification from "./Notification";
 import About from "./About";
 import Home from "./Home";
 import Profile from "./Profile";

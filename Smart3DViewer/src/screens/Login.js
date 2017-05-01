@@ -63,7 +63,7 @@ class Login extends Component {
       console.log("Play services error", err.code, err.message);
     }
   }
-  
+
   /**
    * call login firebase with google account
    * @param {any} result 
@@ -74,7 +74,7 @@ class Login extends Component {
         animating: true,
         error: null
       });
-      console.log("loginFirebase:", result);
+      //console.log("loginFirebase:", result);
       const token = result.accessToken.toString();
       const idToken = result.idToken.toString();
       const credential = firebase.auth.GoogleAuthProvider.credential(
@@ -82,10 +82,28 @@ class Login extends Component {
         token
       );
       const user = await firebase.auth().signInWithCredential(credential);
-      console.log("user:", user);
+      //console.log("user:", user);
       //Check user exit firebase 
-      firebase.database().ref(`/users/${user.uid}`).on('value', snap => {
-        this.props.loginSuccess(snap.val);
+      firebase.database().ref(`/users/${user.uid}`).on('value', snapshot => {
+        console.log("snapshot.val():", snapshot.val());
+        if (snapshot.val()) {
+          const account = JSON.stringify(snapshot.val());
+          //console.log("account:", account);
+          this.props.loginSuccess(JSON.parse(account));
+        } else {
+          firebase.database().ref(`/users/${user.uid}`).set({
+            displayName: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+            refreshToken: null,
+            uid: user.uid,
+            workspaceIds: {
+              '-KinJalRBIP1ky_IO8GR': true,
+              '-KincB4belNYtNlUe7Ps': true
+            }
+          });
+          this.props.loginSuccess(user);
+        }
       }, error => {
         console.log('check user exits firebase', error);
         firebase.database().ref(`/users/${user.uid}`).set({
@@ -93,7 +111,11 @@ class Login extends Component {
           email: user.email,
           photoURL: user.photoURL,
           refreshToken: null,
-          uid: user.uid
+          uid: user.uid,
+          workspaceIds: {
+            '-KinJalRBIP1ky_IO8GR': true,
+            '-KincB4belNYtNlUe7Ps': true
+          }
         });
         this.props.loginSuccess(user);
 

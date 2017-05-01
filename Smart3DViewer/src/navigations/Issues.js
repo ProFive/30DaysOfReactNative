@@ -1,17 +1,17 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import NotificationScreen from '../screens/notification/Notification';
+import IssuesScreen from '../screens/issues/Issues';
 
-const Notification = StackNavigator({
-    Notification: { screen: NotificationScreen }
+const Issues = StackNavigator({
+    Issues: { screen: IssuesScreen }
 }, {
         navigationOptions: {
             drawer: {
-                label: 'Notification',
+                label: 'Issues',
                 icon: ({ tintColor }) => (
                     <Image
-                        source={require('../images/icons/notification.png')}
+                        source={require('../images/icons/issues.png')}
                         style={[styles.icon, { tintColor: tintColor }]}
                     />
                 ),
@@ -25,4 +25,4 @@ const styles = {
     }
 };
 
-export default Notification;
+export default Issues;

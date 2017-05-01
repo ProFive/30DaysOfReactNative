@@ -11,7 +11,7 @@ const Workspace = StackNavigator({
                 label: 'Workspace',
                 icon: ({ tintColor }) => (
                     <Image
-                        source={require('../images/icons/plans.png')}
+                        source={require('../images/icons/workspace.png')}
                         style={[styles.icon, { tintColor: tintColor }]}
                     />
                 ),
@@ -25,4 +25,4 @@ const styles = {
     }
 };
 
-export default Plans;
+export default Workspace;

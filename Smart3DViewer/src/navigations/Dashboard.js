@@ -11,7 +11,7 @@ const Dashboard = StackNavigator({
                 label: 'Dashboard',
                 icon: ({ tintColor }) => (
                     <Image
-                        source={require('../images/icons/plans.png')}
+                        source={require('../images/icons/dashboard.png')}
                         style={[styles.icon, { tintColor: tintColor }]}
                     />
                 ),

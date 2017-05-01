@@ -8,15 +8,6 @@ import {
 export const fetchListContact = ({ me }) => {
     console.log('fetchListContact');
     return (dispatch) => {
-        /**
-         * on: check network => fetch => compare local => sync
-         * once: connect db and fetch once, read persisted data (on phone)
-         * value, child_added, changed etc....
-         * JSON tree
-         * Object
-         *      Object
-         *      Object etc...
-         */
         firebase.database().ref('users')
             .on('value', snap => {
                 const contacts = [];

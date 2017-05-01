@@ -13,6 +13,12 @@
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 
+
+/**
+ * WORKSPACE
+ */
+export const FETCH_WORKSPACE_SUCCESS = 'FETCH_WORKSPACE_SUCCESS';
+export const FETCH_WORKSPACE_ERROR = 'FETCH_WORKSPACE_ERROR';
 /**
  * CHAT
  */

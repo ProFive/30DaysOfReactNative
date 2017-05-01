@@ -24,7 +24,7 @@ const styles = {
         flex: 1
     },
     profile: {
-        height: 300,
+        height: 200,
         backgroundColor: 'purple',
         justifyContent: 'center',
         alignItems: 'center'
