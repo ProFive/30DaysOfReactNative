@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
    container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        //alignItems: 'center'
     },
     containerIndicator: {
         flex: 1,
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        height: 100,
+        height: 50,
         borderBottomWidth: 1,
         borderBottomColor: '#000'
     },
