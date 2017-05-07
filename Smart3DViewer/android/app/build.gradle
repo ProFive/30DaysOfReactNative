@@ -126,6 +126,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-localization')
     compile project(':react-native-fs')
     compile project(':react-native-signature-capture')
     compile project(':react-native-image-picker')

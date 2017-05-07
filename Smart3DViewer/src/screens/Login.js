@@ -17,15 +17,11 @@ import {
 import { connect } from "react-redux";
 import { GoogleSignin, GoogleSigninButton } from "react-native-google-signin";
 import firebase from "firebase";
-import { loginSuccess } from "../actions/Authenticate";
+import { loginSuccess } from "../actions/Auth";
 
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyAjFMN_e_RcCPXfVuD6MTdQuBiqkHZUdiE",
-  authDomain: "smart3dviewer-33615.firebaseio.com",
-  databaseURL: "https://smart3dviewer-33615.firebaseio.com",
-  storageBucket: "smart3dviewer-33615.firebaseio.com/",
-  messagingSenderId: "912632814531"
+  
 };
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
@@ -82,9 +78,11 @@ class Login extends Component {
         token
       );
       const user = await firebase.auth().signInWithCredential(credential);
+      this.props.loginSuccess(user);
+
       //console.log("user:", user);
       //Check user exit firebase 
-      firebase.database().ref(`/users/${user.uid}`).on('value', snapshot => {
+      /*firebase.database().ref(`/users/${user.uid}`).on('value', snapshot => {
         console.log("snapshot.val():", snapshot.val());
         if (snapshot.val()) {
           const account = JSON.stringify(snapshot.val());
@@ -117,7 +115,7 @@ class Login extends Component {
         });
         this.props.loginSuccess(user);
 
-      });
+      });*/
     } catch (error) {
       console.log("22 error.message:", error.message);
       this.setState({
@@ -174,8 +172,8 @@ class Login extends Component {
 }
 export default connect(
   state => ({
-    logged: state.authentication.loggedIn,
-    user: state.authentication.user
+    logged: state.auth.loggedIn,
+    user: state.auth.user
   }),
   { loginSuccess }
 )(Login);

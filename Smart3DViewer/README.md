@@ -36,7 +36,9 @@ robocopy /MIR D:\ReactNative\Workspaces\30DaysOfReactNative\Smart3DViewer\temp d
 11.  list view and expandable list view
     npm install react-native-gifted-listview --save
 
-
+12. ReactNativeLocalization
+    npm install react-native-localization --save
+    react-native link react-native-localization
 
 10.
     npm install --save react-native-sqlite-storage

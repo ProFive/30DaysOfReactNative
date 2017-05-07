@@ -16,7 +16,7 @@ import Contact from './Contact';
 import Chat from './Chat';
 
 export default combineReducers({
-  authentication: Auth,
+  auth: Auth,
   nav: Navigation,
   workspace: Workspace,
   contact: Contact,

@@ -9,6 +9,20 @@
 import { NavigationActions } from 'react-navigation';
 import { LOGIN, LOGOUT } from './types';
 
+export const signInUser = ({ email, password }) => (dispatch) => {
+  dispatch({ type: SIGN_IN_REQUEST });
+
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((user) => {
+      dispatch({ type: SIGN_IN_SUCCESS, payload: user });
+
+      dispatch(reset('signin'));
+
+      Actions.post();
+    })
+    .catch((error) => { dispatch({ type: SIGN_IN_FAILURE, payload: authFailMessage(error.code) }); });
+};
+
 export const loginSuccess = (user) => {
     console.log("loginSuccess:", user);
     return (dispatch) => {
