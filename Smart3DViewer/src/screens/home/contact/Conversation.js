@@ -7,7 +7,7 @@ import {
     ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux';
-import { GiftedChat } from 'react-native-gifted-chat';
+//import { GiftedChat } from 'react-native-gifted-chat';
 import { findRoomByUser, sendMessage } from '../../../actions';
 
 class Conversation extends Component {
@@ -41,13 +41,6 @@ class Conversation extends Component {
         }
         return (
             <View style={styles.container}>
-                <GiftedChat
-                    messages={this.props.messages}
-                    user={{
-                        _id: this.props.me.uid
-                    }}
-                    onSend={this.onSend.bind(this)}
-                />
             </View>
         );
     }

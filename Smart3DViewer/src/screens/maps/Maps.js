@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Dimensions, Image, TouchableOpacity } from 'rea
 import { DrawerButton } from '../../components';
 var { height, width } = Dimensions.get('window');
 //import MapView from 'react-native-maps';
-import RNGooglePlaces from 'react-native-google-places';
+//import RNGooglePlaces from 'react-native-google-places';
 class Maps extends Component {
     static navigationOptions = {
         title: 'Maps',

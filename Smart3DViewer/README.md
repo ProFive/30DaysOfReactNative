@@ -1,5 +1,5 @@
 Google : intranote4
-mdkir temp
+mkdir tmp
 robocopy /MIR D:\ReactNative\Workspaces\30DaysOfReactNative\Smart3DViewer\temp d:\ReactNative\Workspaces\30DaysOfReactNative\Smart3DViewer\node_modules
 1.Google sign-in
     npm install react-native-google-signin --save

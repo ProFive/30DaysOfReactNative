@@ -8,8 +8,8 @@ import android.provider.Settings;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-
 public class MainActivity extends ReactActivity {
+
     public static final int PERMISSION_REQ_CODE = 1234;
     public static final int OVERLAY_PERMISSION_REQ_CODE = 1235;
 

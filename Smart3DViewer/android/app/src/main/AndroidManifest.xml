@@ -7,11 +7,10 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.RECORD_VIDEO"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="22" />
@@ -22,11 +21,6 @@
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
-
-       <!-- You will only need to add this meta-data tag, but make sure it's a child of application -->
-    <meta-data
-      android:name="com.google.android.geo.API_KEY"
-      android:value="AIzaSyDZAp71TZtj43g8UiB6TXJ9encLzgKWgBU"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
@@ -38,8 +32,6 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-
-      
     </application>
 
 </manifest>
