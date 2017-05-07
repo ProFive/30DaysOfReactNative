@@ -98,8 +98,7 @@ class Login extends Component {
             refreshToken: null,
             uid: user.uid,
             workspaceIds: {
-              '-KinJalRBIP1ky_IO8GR': true,
-              '-KincB4belNYtNlUe7Ps': true
+              '-KjCe70-kW2zC-B5DCcD': true
             }
           });
           this.props.loginSuccess(user);
@@ -113,8 +112,7 @@ class Login extends Component {
           refreshToken: null,
           uid: user.uid,
           workspaceIds: {
-            '-KinJalRBIP1ky_IO8GR': true,
-            '-KincB4belNYtNlUe7Ps': true
+            '-KjCe70-kW2zC-B5DCcD': true
           }
         });
         this.props.loginSuccess(user);

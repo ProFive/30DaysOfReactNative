@@ -12,6 +12,7 @@ import {
 import { DrawerButton } from '../../components';
 import { connect } from 'react-redux';
 import { fetchListWorkspace } from '../../actions';
+const RNFS = require('react-native-fs');
 
 
 class Workspace extends Component {
@@ -25,15 +26,15 @@ class Workspace extends Component {
    componentWillMount() {
         console.log('ListContact componentWillMount');
         this.props.fetchListWorkspace(this.props);
-        this.createDataSource(this.props);
+        //this.createDataSource(this.props);
     }
 
     componentWillReceiveProps(nextProps) {
         this.createDataSource(nextProps);
     }
 
-    createDataSource({ workspaces }) {
-        console.log('createDataSource:', workspaces.size);
+    createDataSource(workspaces) {
+        console.log('createDataSource:', workspaces);
         const ds = new ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2
         });

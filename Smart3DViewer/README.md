@@ -29,6 +29,14 @@ robocopy /MIR D:\ReactNative\Workspaces\30DaysOfReactNative\Smart3DViewer\temp d
 9. Camera
     npm install react-native-camera@https://github.com/lwansbrough/react-native-camera.git --save
     react-native link react-native-camera
+10. download file 
+    npm install react-native-fs --save
+    react-native link react-native-fs
+    
+11.  list view and expandable list view
+    npm install react-native-gifted-listview --save
+
+
 
 10.
     npm install --save react-native-sqlite-storage

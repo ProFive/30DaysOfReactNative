@@ -1,0 +1,212 @@
+{
+  "isCategory": false,
+  "isCreator": false,
+  "isDate": false,
+  "isLevel": false,
+  "isPriority": false,
+  "isStatus": false,
+  "isType": false,
+  "isRefresh": false,
+  "isFilterTotal": false,
+  "totalStatus": -1,
+  "drawingName": "",
+  "search": "",
+  "type": [
+    {
+      "id": 0,
+      "code": "qa",
+      "title_language": {
+        "en": "QA",
+        "ko": "품질관리"
+      },
+      "visible": true
+    },
+    {
+      "id": 1,
+      "code": "progress",
+      "title_language": {
+        "en": "Progress",
+        "ko": "진척도"
+      },
+      "visible": true
+    },
+    {
+      "id": 2,
+      "code": "rework",
+      "title_language": {
+        "en": "Rework",
+        "ko": "재 작업"
+      },
+      "visible": true
+    },
+    {
+      "id": 3,
+      "code": "others",
+      "title_language": {
+        "en": "Change order",
+        "ko": "체인지오더"
+      },
+      "visible": true
+    }
+  ],
+  "status": [
+    {
+      "id": 0,
+      "code": "open",
+      "title_language": {
+        "en": "Open",
+        "ko": "생성"
+      },
+      "visible": true
+    },
+    {
+      "id": 1,
+      "code": "working",
+      "title_language": {
+        "en": "Working",
+        "ko": "작업중"
+      },
+      "visible": true
+    },
+    {
+      "id": 2,
+      "code": "resolved",
+      "title_language": {
+        "en": "Resolved",
+        "ko": "해결"
+      },
+      "visible": true
+    },
+    {
+      "id": 3,
+      "code": "closed",
+      "title_language": {
+        "en": "Closed",
+        "ko": "종료"
+      },
+      "visible": true
+    }
+  ],
+  "priority": [
+    {
+      "id": 0,
+      "code": "urgent",
+      "title_language": {
+        "en": "Urgent",
+        "ko": "긴급"
+      },
+      "visible": true
+    },
+    {
+      "id": 1,
+      "code": "critical",
+      "title_language": {
+        "en": "Critical",
+        "ko": "심각"
+      },
+      "visible": true
+    },
+    {
+      "id": 2,
+      "code": "information",
+      "title_language": {
+        "en": "Information",
+        "ko": "중요"
+      },
+      "visible": true
+    },
+    {
+      "id": 3,
+      "code": "hold",
+      "title_language": {
+        "en": "Hold",
+        "ko": "보통"
+      },
+      "visible": true
+    },
+    {
+      "id": 4,
+      "code": "complete",
+      "title_language": {
+        "en": "Complete",
+        "ko": "낮음"
+      },
+      "visible": true
+    }
+  ],
+  "category": [
+    {
+      "id": 0,
+      "code": "room",
+      "title_language": {
+        "en": "Room",
+        "ko": "종료"
+      },
+      "visible": true
+    },
+    {
+      "id": 1,
+      "code": "door",
+      "title_language": {
+        "en": "Door",
+        "ko": "종료"
+      },
+      "visible": true
+    },
+    {
+      "id": 2,
+      "code": "window",
+      "title_language": {
+        "en": "Window",
+        "ko": "종료"
+      },
+      "visible": true
+    },
+    {
+      "id": 3,
+      "code": "column",
+      "title_language": {
+        "en": "Column",
+        "ko": "종료"
+      },
+      "visible": true
+    },
+    {
+      "id": 4,
+      "code": "stair",
+      "title_language": {
+        "en": "Stair",
+        "ko": "종료"
+      },
+      "visible": true
+    },
+    {
+      "id": 5,
+      "code": "equi",
+      "title_language": {
+        "en": "Equipment",
+        "ko": "장비"
+      },
+      "visible": true,
+      "zoom": 0.5
+    },
+    {
+      "id": 6,
+      "code": "pipe",
+      "title_language": {
+        "en": "Pipe",
+        "ko": "관"
+      },
+      "visible": true,
+      "zoom": 2.5
+    }
+  ],
+  "level": [],
+  "date": {
+    "index": 0,
+    "from": "",
+    "to": ""
+  },
+  "creator": [],
+  "softBy": 0
+}
