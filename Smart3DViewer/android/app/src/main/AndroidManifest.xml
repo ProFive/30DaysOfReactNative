@@ -14,13 +14,17 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="22" />
-
     <application
       android:name=".MainApplication"
       android:allowBackup="true"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
+
+      <!-- You will only need to add this meta-data tag, but make sure it's a child of application -->
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyDZAp71TZtj43g8UiB6TXJ9encLzgKWgBU"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

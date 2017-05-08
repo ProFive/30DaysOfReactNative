@@ -3,6 +3,7 @@ package com.smart3dviewer;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+<<<<<<< HEAD
 import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
 import com.rnfs.RNFSPackage;
 import com.rssignaturecapture.RSSignatureCapturePackage;
@@ -10,6 +11,7 @@ import com.imagepicker.ImagePickerPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;
 import org.pgsqlite.SQLitePluginPackage;
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
 
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -37,8 +39,8 @@ public class MainApplication extends Application implements ReactApplication {
             new ImagePickerPackage(),
             new RNGoogleSigninPackage(),
             new RCTCameraPackage(),
-            new SQLitePluginPackage()
-
+            new SQLitePluginPackage(),
+            new RNGoogleSigninPackage()
       );
     }
   };
