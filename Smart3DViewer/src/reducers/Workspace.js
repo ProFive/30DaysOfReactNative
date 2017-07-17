@@ -5,13 +5,13 @@ import {
 
 const INITIAL = {
     loading: true,
-    workspaces: []
+    workspace: null
 };
 
 export default (state = INITIAL, action) => {
     switch (action.type) {
         case FETCH_WORKSPACE_SUCCESS:
-            return { ...state, loading: false, workspaces: action.workspaces };
+            return { ...state, loading: false, workspace: action.workspace };
         case FETCH_WORKSPACE_ERROR:
             return { ...INITIAL, loading: false };
         default:

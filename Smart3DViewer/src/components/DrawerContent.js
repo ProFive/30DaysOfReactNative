@@ -43,6 +43,6 @@ const styles = {
 };
 const mapStateToProps = (state) => {
     console.log('DrawerContent mapStateToProps:', state);
-    return { logged: state.authentication.loggedIn, user: state.authentication.user };
+    return { logged: state.auth.loggedIn, user: state.auth.user };
 };
 export default connect(mapStateToProps)(DrawerContent);

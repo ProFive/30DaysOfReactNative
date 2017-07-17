@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import { DrawerButton } from '../../components';
 import { connect } from 'react-redux';
-import { fetchListWorkspace } from '../../actions';
-const RNFS = require('react-native-fs');
+import { fetchWorkspaceId } from '../../actions';
+//const RNFS = require('react-native-fs');
 
 
 class Workspace extends Component {
@@ -24,25 +24,26 @@ class Workspace extends Component {
         }),
     }
    componentWillMount() {
-        console.log('ListContact componentWillMount');
-        this.props.fetchListWorkspace(this.props);
-        //this.createDataSource(this.props);
+        console.log('Workspace componentWillMount this.props:', this.props);
+        this.props.fetchWorkspaceId(this.props);
     }
 
     componentWillReceiveProps(nextProps) {
-        this.createDataSource(nextProps);
+        console.log('componentWillReceiveProps workspace:', nextProps.workspace);
+
+        this.createDataSource(nextProps.workspace.models);
     }
 
-    createDataSource(workspaces) {
-        console.log('createDataSource:', workspaces);
+    createDataSource(models) {
+        console.log('createDataSource:', models);
         const ds = new ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2
         });
-        this.dataSource = ds.cloneWithRows(workspaces);
+        this.dataSource = ds.cloneWithRows(models);
     }
 
-    onRowPressed = (workspace) => {
-        console.log('workspace:'+ workspace);
+    onRowPressed = (model) => {
+        console.log('onRowPressed model:', model);
     }
 
     renderRow = (item) => {
@@ -51,7 +52,7 @@ class Workspace extends Component {
                 onPress={this.onRowPressed.bind(this, item)}
                 style={styles.row}
             >
-                <Text style={styles.name} >{item.name}</Text>
+                <Text style={styles.name} > {item.type} {item.name}</Text>
             </TouchableOpacity>
         );
     }
@@ -76,10 +77,10 @@ class Workspace extends Component {
     }
 }
 export default connect(state => ({
-    workspaces: state.workspace.workspaces,
+    workspace: state.workspace.workspace,
     loading: state.workspace.loading,
-    me: state.authentication.user,
-}), { fetchListWorkspace })(Workspace);
+    workspaceId: state.auth.user.defaultWorkspace,
+}), { fetchWorkspaceId })(Workspace);
 
 const styles = StyleSheet.create({
    container: {
