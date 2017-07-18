@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Smart3DViewer</string>
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+        AIzaSyDZAp71TZtj43g8UiB6TXJ9encLzgKWgBU
+    </string>
+
 </resources>

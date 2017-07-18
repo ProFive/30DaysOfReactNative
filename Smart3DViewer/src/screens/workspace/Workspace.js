@@ -1,60 +1,61 @@
 import React, { Component } from "react";
 import {
-  StyleSheet,
-  View,
-  Text,
-  Button,
-  ListView,
-  ActivityIndicator,
-  TouchableOpacity,
-  Image
-} from "react-native";
-import { DrawerButton } from "../../components";
-import { connect } from "react-redux";
-import { fetchListWorkspace } from "../../actions";
-const RNFS = require("react-native-fs");
+    StyleSheet,
+    View,
+    Text,
+    Button,
+    ListView,
+    ActivityIndicator,
+    TouchableOpacity,
+    Image
+} from 'react-native';
+import { DrawerButton } from '../../components';
+import { connect } from 'react-redux';
+import { fetchWorkspaceId } from '../../actions';
+//const RNFS = require('react-native-fs');
+
 
 class Workspace extends Component {
-  static navigationOptions = {
-    title: "Workspace",
-    header: navigation => ({
-      visible: true,
-      left: <DrawerButton navigation={navigation} />
-    })
-  };
-  componentWillMount() {
-    console.log("ListContact componentWillMount");
-    this.props.fetchListWorkspace(this.props);
-    this.createDataSource(this.props);
-  }
+    static navigationOptions = {
+        title: 'Workspace',
+        header: (navigation) => ({
+            visible: true,
+            left: <DrawerButton navigation={navigation} />
+        }),
+    }
+   componentWillMount() {
+        console.log('Workspace componentWillMount this.props:', this.props);
+        this.props.fetchWorkspaceId(this.props);
+    }
 
-  componentWillReceiveProps(nextProps) {
-    this.createDataSource(nextProps);
-  }
+    componentWillReceiveProps(nextProps) {
+        console.log('componentWillReceiveProps workspace:', nextProps.workspace);
 
-  createDataSource(workspaces) {
-    console.log("createDataSource:", workspaces);
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
-    this.dataSource = ds.cloneWithRows(workspaces);
-  }
+        this.createDataSource(nextProps.workspace.models);
+    }
 
-  onRowPressed = workspace => {
-    console.log("workspace:" + workspace);
-  };
+    createDataSource(models) {
+        console.log('createDataSource:', models);
+        const ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2
+        });
+        this.dataSource = ds.cloneWithRows(models);
+    }
 
-  renderRow = item => {
-    return (
-      <TouchableOpacity
-        onPress={this.onRowPressed.bind(this, item)}
-        style={styles.row}
-      >
-        <Text style={styles.name}>{item.name}</Text>
-      </TouchableOpacity>
-    );
-  };
+    onRowPressed = (model) => {
+        console.log('onRowPressed model:', model);
+    }
 
+    renderRow = (item) => {
+        return (
+            <TouchableOpacity
+                onPress={this.onRowPressed.bind(this, item)}
+                style={styles.row}
+            >
+                <Text style={styles.name} > {item.type} {item.name}</Text>
+            </TouchableOpacity>
+        );
+    }
   render() {
     if (this.props.loading) {
       return (
@@ -74,14 +75,11 @@ class Workspace extends Component {
     );
   }
 }
-export default connect(
-  state => ({
-    workspaces: state.workspace.workspaces,
+export default connect(state => ({
+    workspace: state.workspace.workspace,
     loading: state.workspace.loading,
-    me: state.auth.user
-  }),
-  { fetchListWorkspace }
-)(Workspace);
+    workspaceId: state.auth.user.defaultWorkspace,
+}), { fetchWorkspaceId })(Workspace);
 
 const styles = StyleSheet.create({
   container: {
