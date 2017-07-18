@@ -77,7 +77,7 @@ class ListContact extends Component {
 export default connect(state => ({
     contacts: state.contact.contacts,
     loading: state.contact.loading,
-    me: state.authentication.user,
+    me: state.auth.user,
 }), { fetchListContact })(ListContact);
 
 const styles = StyleSheet.create({

@@ -16,9 +16,9 @@ import DrawerContent from "../components/DrawerContent";
 
 const Authorized = DrawerNavigator(
   {
-    
-    Dashboard:{screen:Dashboard},
     Workspace:{screen:Workspace},
+    Dashboard:{screen:Dashboard},
+    
     Issues:{screen:Issues},
     Plans: { screen: Plans },
     Maps: { screen: Maps },

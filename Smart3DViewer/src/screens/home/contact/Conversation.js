@@ -58,7 +58,7 @@ const styles = {
 };
 
 export default connect(state => ({
-    me: state.authentication.user,
+    me: state.auth.user,
     loading: state.chat.loading,
     messages: state.chat.messages,
     roomKey: state.chat.roomKey

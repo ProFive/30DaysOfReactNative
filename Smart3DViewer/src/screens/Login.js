@@ -21,7 +21,11 @@ import { loginSuccess } from "../actions/Auth";
 
 // Initialize Firebase
 const firebaseConfig = {
-  
+  apiKey: "AIzaSyAjFMN_e_RcCPXfVuD6MTdQuBiqkHZUdiE",
+  authDomain: "smart3dviewer-33615.firebaseio.com",
+  databaseURL: "https://smart3dviewer-33615.firebaseio.com",
+  storageBucket: "smart3dviewer-33615.firebaseio.com/",
+  messagingSenderId: "912632814531"
 };
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
@@ -38,7 +42,7 @@ class Login extends Component {
       error: null
     };
   }
-
+  
   componentDidMount() {
     this.setupGoogleSignin();
   }
@@ -70,7 +74,7 @@ class Login extends Component {
         animating: true,
         error: null
       });
-      //console.log("loginFirebase:", result);
+      console.log("loginFirebase:", result);
       const token = result.accessToken.toString();
       const idToken = result.idToken.toString();
       const credential = firebase.auth.GoogleAuthProvider.credential(
@@ -78,17 +82,33 @@ class Login extends Component {
         token
       );
       const user = await firebase.auth().signInWithCredential(credential);
-      this.props.loginSuccess(user);
+      console.log("user:", user);
 
-      //console.log("user:", user);
-      //Check user exit firebase 
-      /*firebase.database().ref(`/users/${user.uid}`).on('value', snapshot => {
-        console.log("snapshot.val():", snapshot.val());
-        if (snapshot.val()) {
-          const account = JSON.stringify(snapshot.val());
-          //console.log("account:", account);
-          this.props.loginSuccess(JSON.parse(account));
-        } else {
+      //Check user exit firebase
+      firebase.database().ref(`/users/${user.uid}`).on(
+        "value",
+        snapshot => {
+          console.log("snapshot.val():", snapshot.val());
+          if (snapshot.val()) {
+            const account = JSON.stringify(snapshot.val());
+            //console.log("account:", account);
+            this.props.loginSuccess(JSON.parse(account));
+          } else {
+            firebase.database().ref(`/users/${user.uid}`).set({
+              displayName: user.displayName,
+              email: user.email,
+              photoURL: user.photoURL,
+              refreshToken: null,
+              uid: user.uid,
+              workspaceIds: {
+                "-KjCe70-kW2zC-B5DCcD": true
+              }
+            });
+            this.props.loginSuccess(user);
+          }
+        },
+        error => {
+          console.log("check user exits firebase", error);
           firebase.database().ref(`/users/${user.uid}`).set({
             displayName: user.displayName,
             email: user.email,
@@ -96,26 +116,12 @@ class Login extends Component {
             refreshToken: null,
             uid: user.uid,
             workspaceIds: {
-              '-KjCe70-kW2zC-B5DCcD': true
+              "-KjCe70-kW2zC-B5DCcD": true
             }
           });
           this.props.loginSuccess(user);
         }
-      }, error => {
-        console.log('check user exits firebase', error);
-        firebase.database().ref(`/users/${user.uid}`).set({
-          displayName: user.displayName,
-          email: user.email,
-          photoURL: user.photoURL,
-          refreshToken: null,
-          uid: user.uid,
-          workspaceIds: {
-            '-KjCe70-kW2zC-B5DCcD': true
-          }
-        });
-        this.props.loginSuccess(user);
-
-      });*/
+      );
     } catch (error) {
       console.log("22 error.message:", error.message);
       this.setState({
